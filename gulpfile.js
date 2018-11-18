@@ -9,18 +9,16 @@ const cssMinify = require("gulp-csso");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
 const cheerio = require("gulp-cheerio");
-const posthtml = require("gulp-posthtml");
-const include = require("posthtml-include");
 const rename = require("gulp-rename");
 const run = require("run-sequence");
 const del = require("del");
 const imageminMozJpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
-const prettify = require("gulp-jsbeautifier");
 const browserify = require("browserify");
 const source = require("vinyl-source-stream");
 const uglify = require("gulp-uglify");
 const twig = require('gulp-twig');
+const htmlmin = require('gulp-htmlmin');
 
 // Process SCSS files
 
@@ -43,11 +41,7 @@ gulp.task("html", function() {
   return gulp
     .src("src/*.twig")
     .pipe(twig())
-    .pipe(
-      prettify({
-        indent_size: 4
-      })
-    )
+    .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest("build"))
     .pipe(server.stream());
 });
