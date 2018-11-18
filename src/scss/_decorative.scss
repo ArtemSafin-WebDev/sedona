@@ -1,0 +1,50 @@
+.small-triangle {
+  height: 5vw;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: calc(-5vw + 2px);
+  fill: white;
+  @media screen and (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.large-decorative {
+  position: absolute;
+  bottom: calc(100% - 2px);
+  left: 0;
+  width: 100%;
+  svg {
+    fill: white;
+    &:nth-child(1) {
+      display: block;
+      height: 8.75vw;
+      width: 100%;
+      @media screen and (min-width: $tablet-width) {
+        display: none;
+      }
+    }
+    &:nth-child(2) {
+      display: none;
+      height: 7.55vw;
+      
+      width: 100%;
+      @media screen and (min-width: $tablet-width) {
+        display: block;
+      }
+      @media screen and (min-width: $desktop-width) {
+        display: none;
+      }
+    }
+    &:nth-child(3) {
+      display: none;
+      height: 5.1vw;
+      max-height: 64px;
+      width: 100%;
+      @media screen and (min-width: $desktop-width) {
+        display: block;
+      }
+    }
+  }
+}

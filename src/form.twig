@@ -1,0 +1,148 @@
+{% extends "templates/layouts/default.twig" %}
+
+{% set title = "Sedona - Заполните форму" %}
+
+{% block content %}
+
+{% include "templates/includes/header.twig" %}
+
+<main>
+    <div class="universal-logo">
+        <img src="img/svg/logo/SedonaLogoSimple.svg" width="230px" alt="" class="universal-logo__image">
+    </div>
+    <div class="universal-intro">
+        <div class="large-decorative">
+            <svg viewBox='0 0 100 100' fill='white' width="100%" height="8.75vw" preserveAspectRatio='none'><polygon points='0,0 50,90 100,0 100,100 0,100'/></svg>
+            <svg viewBox='0 0 100 100' fill='orangered' width="100%" height="7.55vw" preserveAspectRatio='none'><polygon points='0,100 0,33 5,40 5,0 50,95 95,0 95,40 100,33 100,100'/></svg>
+            <svg viewBox='0 0 100 100' fill='white' width="100%" height="3.5vw" preserveAspectRatio='none'><polygon points='0,100 0,0 20,42 20,0 50,95 80,0 80,42 100,0 100,100'/></svg>
+        </div>
+        <h2 class="universal-intro__heading">
+            Оставьте свой отзыв
+        </h2>
+        <p class="universal-intro__paragraph universal-intro__paragraph--form">
+            Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях
+        </p>
+    </div>
+    <div class="introduce-yourself">
+      <form action="/subscribe" class="introduce-yourself__form" method="POST" data-parsley-validate>
+        <div class="name-field-group">
+          <h3 class="name-field-group__heading">Представьтесь:</h3>
+          <div class="name-field-group__row">
+            <label for="first-name" class="name-field-group__label">Имя*:</label>
+            <input id="first-name" name="first-name" type="text" class="name-field-group__input" data-parsley-alpha data-parsley-trigger="focusout" placeholder="Пётр" required>
+          </div>
+          <div class="name-field-group__row">
+            <label for="last-name" class="name-field-group__label">Фамилия*:</label>
+            <input id="last-name" name="last-name" type="text" class="name-field-group__input" data-parsley-alpha data-parsley-trigger="focusout" placeholder="Иванов" required>
+          </div>
+          <div class="name-field-group__row">
+            <label for="patronymic" class="name-field-group__label">Отчество:</label>
+            <input id="patronymic" name="patronymic" type="text" class="name-field-group__input" data-parsley-alpha data-parsley-trigger="focusout" placeholder="Александрович" required>
+          </div>
+        </div>
+        <div class="contact-field-group">
+          <h3 class="contact-field-group__heading">Контактная информация:</h3>
+          <div class="contact-field-group__row">
+            <label for="phone" class="contact-field-group__label"><span class="text-hidden">Контактный </span>телефон:</label>
+            <div class="contact-field-group__input-wrapper">
+              <input id="phone" name="phone" type="tel" class="contact-field-group__input" data-parsley-phone data-parsley-trigger="focusout" placeholder="Введите телефон" required>
+              <label for="phone" class="contact-field-group__graphic-label">
+                <svg class="contact-field-group__icon" aria-hidden="true" width="20px" height="20px">
+                  <use xlink:href="img/svg/icons/sprite.svg#icon-phone"></use>
+                </svg>
+              </label>
+            </div>
+          </div>
+          <div class="contact-field-group__row">
+            <label for="email" class="contact-field-group__label">Электронная почта:</label>
+            <div class="contact-field-group__input-wrapper">
+              <input id="email" name="email" type="email" class="contact-field-group__input" data-parsley-trigger="focusout" placeholder="Введите e-mail" required>
+              <label for="email" class="contact-field-group__graphic-label">
+                <svg class="contact-field-group__icon" aria-hidden="true" width="16px" height="12px">
+                  <use xlink:href="img/svg/icons/sprite.svg#icon-mail"></use>
+                </svg>
+              </label>
+            </div>
+            {# <span class="contact-field-group__error">Введите email</span> #}
+          </div>
+        </div>
+        <div class="impressions-field-group">
+          <h3 class="impressions-field-group__heading">Ваше общее впечатление:</h3>
+          <div class="impressions-field-group__row">
+            <input class="impressions-field-group__input" type="radio" id="positive" name="impression" value="positive" checked required>
+            <label for="positive" class="impressions-field-group__label">
+              <span class="impressions-field-group__radio"></span>Скорее положительное
+            </label>
+          </div>
+          <div class="impressions-field-group__row">
+            <input class="impressions-field-group__input" type="radio" id="negative" name="impression" value="negative" required>
+            <label for="negative" class="impressions-field-group__label">
+              <span class="impressions-field-group__radio"></span>Скорее отрицательное
+            </label>
+          </div>
+          <div class="impressions-field-group__row">
+            <input class="impressions-field-group__input" type="radio" id="uncertain" name="impression" value="uncertain" required>
+            <label for="uncertain" class="impressions-field-group__label">
+              <span class="impressions-field-group__radio"></span>Затрудняюсь ответить
+            </label>
+          </div>
+        </div>
+        <div class="sightseeing-field-group">
+          <h3 class="sightseeing-field-group__heading"><span>посещенные 
+достопримечательности:</span></h3>
+          <div class="sightseeing-field-group__row">
+            <input class="sightseeing-field-group__input" type="checkbox" id="devils-bridge" name="sightseeing[]" value="devils-bridge" checked>
+            <label for="devils-bridge" class="sightseeing-field-group__label">
+              <span class="sightseeing-field-group__checkbox">
+                <svg width="25" height="25" viewBox="0 0 25 25" class="sightseeing-field-group__icon">
+                  <polyline fill="none" stroke-linejoin="round" stroke-linecap="round" points="2,14 10,21 22,9" />
+                </svg>
+              </span>Мост Дьявола
+            </label>
+          </div>
+          <div class="sightseeing-field-group__row">
+            <input class="sightseeing-field-group__input" type="checkbox" id="bell-rock" name="sightseeing[]" value="bell-rock">
+            <label for="bell-rock" class="sightseeing-field-group__label">
+              <span class="sightseeing-field-group__checkbox">
+                <svg width="25" height="25" viewBox="0 0 25 25" class="sightseeing-field-group__icon">
+                  <polyline fill="none" stroke-linejoin="round" stroke-linecap="round" points="2,14 10,21 22,9" />
+                </svg>
+              </span>Гора-Колокол
+            </label>
+          </div>
+          <div class="sightseeing-field-group__row">
+            <input class="sightseeing-field-group__input" type="checkbox" id="slide-park" name="sightseeing[]" value="slide-park">
+            <label for="slide-park" class="sightseeing-field-group__label">
+              <span class="sightseeing-field-group__checkbox">
+                <svg width="25" height="25" viewBox="0 0 25 25" class="sightseeing-field-group__icon">
+                  <polyline fill="none" stroke-linejoin="round" stroke-linecap="round" points="2,14 10,21 22,9" />
+                </svg>
+              </span>Слайд-парк
+            </label>
+          </div>
+          <div class="sightseeing-field-group__row">
+            <input class="sightseeing-field-group__input" type="checkbox" id="red-rocks" name="sightseeing[]" value="red-rocks">
+            <label for="red-rocks" class="sightseeing-field-group__label">
+              <span class="sightseeing-field-group__checkbox">
+                <svg width="25" height="25" viewBox="0 0 25 25" class="sightseeing-field-group__icon">
+                  <polyline fill="none" stroke-linejoin="round" stroke-linecap="round" points="2,14 10,21 22,9" />
+                </svg>
+              </span>Красные скалы
+            </label>
+          </div>
+        </div>
+        <div class="emotions-field-group">
+          <h3 class="emotions-field-group__heading">Опишите свои эмоции:</h3>
+          <textarea class="emotions-field-group__textarea" name="emotions" id="emotions" cols="30" rows="5" data-parsley-trigger="focusout" placeholder="Опишите подробно все свои восторги" required></textarea>
+        </div>
+        <div class="submit-block">
+          <button type="submit" class="submit-block__button">Отправить отзыв</button>
+          <span class="submit-block__requirements">* — обязательные поля</span>
+        </div>
+      </form>
+    </div>
+</main>
+
+{% include "templates/includes/footer.twig" %}
+
+{% endblock %}

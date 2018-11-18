@@ -1,0 +1,26 @@
+.advantages-list {
+  list-style-type: none;
+  @media screen and (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.advantages-list__item {
+  width: 100%;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  @media screen and (min-width: $tablet-width) {
+    width: 33.33%;
+    
+  }
+}
+
+.advantages-list__item--fullwidth {
+  width: 100%;
+  background-color: transparent;
+  @media screen and (min-width: $tablet-width) {
+    width: 100%;
+  }
+}

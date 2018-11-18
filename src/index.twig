@@ -1,0 +1,185 @@
+{% extends "templates/layouts/default.twig" %}
+
+{% set title = "Sedona - Главная страница" %}
+
+{% block content %}
+
+{% include "templates/includes/header.twig" %}
+
+<main>
+    <div class="booking-modal">
+        <div class="booking-modal__content">
+            <h3 class="booking-modal__heading">
+                Укажите даты
+            </h3>
+            <form action="/booking" class="booking-modal__form" method="POST" data-parsley-validate>
+                <div class="booking-modal__row">
+                    <label for="arrival" class="booking-modal__label">Дата приезда:</label>
+                    <input type="text" name="arrival" id="arrival" class="booking-modal__input" data-parsley-trigger="focusout" data-parsley-moment data-parsley-before placeholder="DD/MM/YYYY" required>   
+                </div>
+                <div class="booking-modal__row">
+                    <label for="departure" class="booking-modal__label">Дата отъезда:</label>
+                    <input type="text" name="departure" id="departure" class="booking-modal__input" data-parsley-trigger="focusout" data-parsley-moment data-parsley-after placeholder="DD/MM/YYYY" required>   
+                </div>
+                <button type="submit" class="booking-modal__submit">Найти</button>
+            </form>
+        </div>
+    </div>
+    <div class="index-logo">
+        <img src="img/svg/logo/SedonaMainLogo.svg" alt="Логотип" class="index-logo__image" width="280px">
+    </div>
+    <div class="advantages-intro">
+        <div class="large-decorative">
+            <svg viewBox='0 0 100 100' fill='white' width="100%" height="8.75vw" preserveAspectRatio='none'><polygon points='0,0 50,90 100,0 100,100 0,100'/></svg>
+            <svg viewBox='0 0 100 100' fill='orangered' width="100%" height="7.55vw" preserveAspectRatio='none'><polygon points='0,100 0,33 5,40 5,0 50,95 95,0 95,40 100,33 100,100'/></svg>
+            <svg viewBox='0 0 100 100' fill='white' width="100%" height="3.5vw" preserveAspectRatio='none'><polygon points='0,100 0,0 20,42 20,0 50,95 80,0 80,42 100,0 100,100'/></svg>
+        </div>
+        <h2 class="advantages-intro__heading">
+            Седона — небольшой городок в Аризоне, заслуживающий большего!
+        </h2>
+        <p class="advantages-intro__paragraph">
+            Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
+        </p>
+        <svg viewBox='0 0 100 100' fill='white' preserveAspectRatio='none' width="100%" height="5vw" class="small-triangle">
+            <polygon points='0,0 0,11 50,100 100,11 100,0'/>
+        </svg>
+    </div>
+    <ul class="advantages-list">
+        <li class="advantages-list__item advantages-list__item--fullwidth">
+            <div class="advantage-container">
+                <div class="advantage-card advantage-card--under-decoration">
+                    <h2 class="advantage-card__heading">
+                        Настоящий городок
+                    </h2>
+                    <span class="advantage-card__number">
+                        —&nbsp;№1&nbsp;—
+                    </span>
+                    <p class="advantage-card__text">
+                        Седона не аттракцион для туристов, там течет своя жизнь
+                    </p>
+                </div>
+                <div class="advantage-image">
+                    <img src="img/photo-city@1x.jpg" srcset="img/photo-city@1x.jpg 1x, img/photo-city@2x.jpg 2x" width="320px" alt="Город">
+                </div>    
+            </div>
+            <ul class="services">
+                <li class="services__item">
+                    <div class="services__icon-container">
+                        <svg class="services__icon services__icon--home" aria-hidden="true" width="38px" height="36px">
+                            <use xlink:href="img/svg/icons/sprite.svg#icon-home"></use>
+                        </svg>
+                    </div>
+                    <h4 class="services__name">
+                        Жилье
+                    </h4>
+                    <p class="services__description">
+                        Рекомендуем пожить в настоящем мотеле, все как в кино!
+                    </p>
+                </li>
+                <li class="services__item">
+                    <div class="services__icon-container">
+                        <svg class="services__icon services__icon--present" aria-hidden="true" width="32px" height="38px">
+                            <use xlink:href="img/svg/icons/sprite.svg#icon-present"></use>
+                        </svg>
+                    </div>
+                    <h4 class="services__name">
+                        Сувениры
+                    </h4>
+                    <p class="services__description">
+                        Не только китайского, но и местного производства!
+                    </p>
+                </li>
+                <li class="services__item">
+                    <div class="services__icon-container">
+                        <svg class="services__icon services__icon--burger" aria-hidden="true" width="38px" height="35px">
+                            <use xlink:href="img/svg/icons/sprite.svg#icon-burger"></use>
+                        </svg>
+                    </div>
+                    <h4 class="services__name">
+                        Еда
+                    </h4>
+                    <p class="services__description">
+                        Всегда заказывайте фирменный бургер, Вы не разочаруетесь!
+                    </p>
+                </li>
+            </ul>
+        </li>
+        <li class="advantages-list__item advantages-list__item--fullwidth">
+            <div class="advantage-container">
+                <div class="advantage-card">
+                    <h2 class="advantage-card__heading">
+                        Там есть мост дьявола
+                    </h2>
+                    <span class="advantage-card__number">
+                        —&nbsp;№2&nbsp;—
+                    </span>
+                    <p class="advantage-card__text">
+                        Да, по нему можно пройти! Если вы осмелитесь, конечно
+                    </p>
+                </div>
+                <div class="advantage-image">
+                    <img src="img/photo-bridge@1x.jpg" srcset="img/photo-bridge@1x.jpg 1x, img/photo-bridge@2x.jpg 2x" width="320px" alt="Город">
+                </div>
+            </div>
+        </li>
+        <li class="advantages-list__item">
+            <div class="advantage-card ">
+                <h2 class="advantage-card__heading">
+                    Небольшая площадь
+                </h2>
+                <span class="advantage-card__number">
+                    —&nbsp;№3&nbsp;—
+                </span>
+                <p class="advantage-card__text">
+                    Все интересные места находятся очень близко
+                </p>
+            </div>
+        </li>
+        <li class="advantages-list__item">
+            <div class="advantage-card">
+                <h2 class="advantage-card__heading">
+                    Красивая дорога
+                </h2>
+                <span class="advantage-card__number">
+                    —&nbsp;№4&nbsp;—
+                </span>
+                <p class="advantage-card__text">
+                    Ехать в седону из лас-вегаса совсем не скучно!
+                </p>
+            </div>
+        </li>
+        <li class="advantages-list__item">
+            <div class="advantage-card">  
+                <h2 class="advantage-card__heading">
+                    Мало туристов
+                </h2>
+                <span class="advantage-card__number">
+                    —&nbsp;№5&nbsp;—
+                </span>
+                <p class="advantage-card__text">
+                    Большинство едет в гранд каньон и толпится там
+                </p>
+            </div>
+        </li>
+    </ul>
+    <div class="interested">
+        <h3 class="interested__heading">
+            Заинтересовались?
+        </h3>
+        <p class="interested__description">
+            Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в Седоне
+        </p>
+        <a href="#" class="interested__modal-btn">
+            Найти гостиницу
+        </a>
+    </div>
+    <div class="map">
+    
+    </div>
+    
+    
+</main>
+
+{% include "templates/includes/footer.twig" %}
+
+{% endblock %}

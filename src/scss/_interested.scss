@@ -1,0 +1,78 @@
+.interested {
+  padding-left: $mobile-padding;
+  padding-right: $mobile-padding;
+  padding-top: 26px;
+  padding-bottom: 50px;
+  background-color: #fff;
+  text-align: center;
+  @media screen and (min-width: $tablet-width) {
+    padding-left: 20.18%;
+    padding-right: 20.18%;
+    padding-top: 48px;
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding-left: 30.83%;
+    padding-right: 30.83%;
+    padding-bottom: 66px;
+  }
+}
+
+.interested__heading {
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  @media screen and (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 23px;
+  }
+  
+}
+
+.interested__description {
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+  @media screen and (min-width: $tablet-width) {
+    margin-bottom: 42px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    margin-bottom: 46px;
+  }
+  
+}
+
+.interested__modal-btn {
+  &:link,
+  &:visited {
+    font-size: 21px;
+    line-height: 26px;
+    display: block;
+    color: white;
+    border: none;
+    background-color: $secondary-blue;
+    cursor: pointer;
+    padding: 16px 35px;
+    width: 100%;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color .3s, color .3s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  &:hover {
+    background-color: #669ec0;
+  }
+  &:active {
+    background-color: #5496bd;
+    color: rgba(white, .3);
+  }
+  &:disabled {
+    background-color: #e5e5e5;
+    color: white;
+  }
+}

@@ -1,0 +1,5 @@
+*.ai
+*.psd
+build/
+node_modules/
+mockup/

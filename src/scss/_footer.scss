@@ -1,0 +1,129 @@
+.page-footer {
+  background-color: #fff;
+  @include containerPadding();
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+}
+
+.page-footer__hashtag {
+  &:link,
+  &:visited {
+    color: black;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    transition: color 0.2s;
+  }
+  &:hover {
+    color: $secondary-blue;
+  }
+}
+
+.page-footer__social-links-list {
+  list-style-type: none;
+  display: flex;
+  flex-shrink: 0;
+}
+
+.page-footer__social-links-list-item {
+  margin-right: 6px;
+}
+
+.page-footer__social-links-list-item:last-child {
+  margin-right: 0px;
+}
+
+.page-footer__social-link-icon {
+  fill: white;
+}
+
+.page-footer__social-link {
+  &:link,
+  &:visited {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background-color: $secondary-blue;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  &:hover {
+    background-color: #669ec0;
+  }
+  &:active {
+    background-color: #5496bd;
+    color: rgba(#fff, 0.3);
+  }
+}
+
+.page-footer__developed-by {
+  &:link,
+  &:visited {
+    font-size: 14px;
+    line-height: 26px;
+    color: black;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+    flex-shrink: 0;
+    @media screen and (min-width: $tablet-width) {
+      margin: 0;
+    }
+  }
+  &:hover {
+    .page-footer__developed-by-icon {
+      fill: #81b3d2;
+    }
+  }
+  &:active {
+    .page-footer__developed-by-icon {
+      fill: #b2b2b2;
+    }
+  }
+}
+
+.page-footer__developed-by-text {
+  margin-right: 13px;
+}
+
+.page-footer__developed-by-icon {
+  fill: black;
+  transition: fill 0.3s;
+  width: 28px;
+  height: 34px;
+}
+
+.page-footer__hashtag {
+  margin-top: 36px;
+  @media screen and (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+.page-footer__social-links-list {
+  margin-top: 38px;
+  @media screen and (min-width: $tablet-width) {
+    margin: 0;
+  }
+}
+.page-footer__developed-by {
+  margin-top: 41px;
+  @media screen and (min-width: $tablet-width) {
+    margin: 0;
+  }
+}

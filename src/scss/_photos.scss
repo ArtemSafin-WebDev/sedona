@@ -1,0 +1,80 @@
+.photos {
+}
+
+.photos__list {
+  list-style-type: none;
+  @media screen and (min-width: $mobile-large-width) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @media screen and (min-width: $tablet-width) {
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding: 0;
+  }
+}
+
+.photos__list-item {
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+  padding: $mobile-padding;
+  padding-top: 22px;
+  @media screen and (min-width: $mobile-large-width) {
+    width: 50%;
+    padding-bottom: 0;
+    &:nth-of-type(odd) {
+      padding-right: 11px;
+    }
+    &:nth-of-type(even) {
+      padding-left: 11px;
+    }
+  }
+  @media screen and (min-width: $tablet-width) {
+    width: 100%;
+    padding: 0;
+    &:nth-of-type(odd) {
+      padding: 0;
+    }
+    &:nth-of-type(even) {
+      padding: 0;
+    }
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #e5e5e5;
+    @media screen and (min-width: $mobile-large-width) {
+      display: none;
+    }
+    @media screen and (min-width: $tablet-width) {
+      display: none;
+    }
+  }
+  
+  &:first-child {
+    .photo-container {
+      @media screen and (min-width: $tablet-width) {
+        padding-bottom: 61.72%;
+      }
+      @media screen and (min-width: $desktop-width) {
+        padding-bottom: 33.4%;
+      }
+    }
+  }
+
+  &:not(:first-child) {
+    @media screen and (min-width: $tablet-width) {
+      width: 50%;
+    }
+    @media screen and (min-width: $desktop-width) {
+      width: 33.33%;
+    }
+  }
+}

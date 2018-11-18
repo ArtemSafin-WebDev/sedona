@@ -1,0 +1,48 @@
+.likes {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $desktop-width) {
+    color: white;
+  }
+}
+
+.likes__button {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    display: block;
+    margin-right: 14px;
+    @media screen and (min-width: $tablet-width) {
+      margin-right: 10px;
+    }
+  }
+  &:hover {
+    .likes__icon {
+      fill: #c2c2c2;
+    }
+  }
+  &:active {
+    .likes__icon {
+      fill: #949494;
+    }
+  }
+}
+
+.likes__icon {
+  fill: #b2b2b2;
+  display: block;
+  position: relative;
+  top: -1px;
+  transition: fill 0.3s;
+  @media screen and (min-width: $desktop-width) {
+    fill: white;
+  }
+}
+
+.likes__count {
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+  position: relative;
+  top: 1px;
+}

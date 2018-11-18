@@ -1,0 +1,20 @@
+.introduce-yourself {
+  
+}
+
+
+
+.introduce-yourself__form {
+  @media screen and (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+    padding-top: 55px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding-left: $desktop-padding;
+    padding-right: $desktop-padding;
+    padding-top: 40px;
+  }
+}

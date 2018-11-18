@@ -1,0 +1,31 @@
+@mixin visuallyHidden() {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+@mixin containerPadding() {
+  padding-left: $mobile-padding;
+  padding-right: $mobile-padding;
+  @media screen and (min-width: $tablet-width) {
+    padding-left: $tablet-padding;
+    padding-right: $tablet-padding;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding-left: $desktop-padding;
+    padding-right: $desktop-padding;
+  }
+}
+
+@mixin objectFitCover() {
+  object-fit: cover;
+  font-family: "object-fit: cover;";
+}
+
+

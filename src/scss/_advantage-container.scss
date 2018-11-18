@@ -1,0 +1,7 @@
+.advantage-container {
+  @media screen and (min-width: $tablet-width) {
+    display: flex;
+    min-height: 256px;
+  }
+  
+}

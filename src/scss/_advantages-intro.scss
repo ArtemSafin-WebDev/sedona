@@ -1,0 +1,38 @@
+.advantages-intro {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  position: relative;
+  z-index: 7000;
+  @media screen and (min-width: $tablet-width) {
+    padding-top: 48px;
+    padding-bottom: 50px;
+  }
+}
+
+.advantages-intro__heading {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 86%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  @media screen and (min-width: $tablet-width) {
+    font-size: 21px;
+    width: 60%;
+    margin-bottom: 28px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    width: 40%;
+  }
+}
+
+.advantages-intro__paragraph {
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: normal;
+  text-transform: uppercase;
+  width: 86%;
+  margin: 0 auto;
+}

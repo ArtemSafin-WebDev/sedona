@@ -1,0 +1,100 @@
+.emotions-field-group {
+  padding-top: 18px;
+  padding-left: $mobile-padding;
+  padding-right: $mobile-padding;
+  padding-bottom: 3px;
+  position: relative;
+  @media screen and (min-width: $tablet-width) {
+    padding: 0;
+    width: 100%;
+    padding-top: 36px;
+  }
+  @media screen and (min-width: $desktop-width) {
+    padding-top: 33px;
+    
+  }
+}
+
+.emotions-field-group__heading {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  @media screen and (min-width: $tablet-width) {
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: bold;
+    margin-bottom: 57px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &::after,
+  &::before {
+    content: "";
+    width: 10px;
+    display: none;
+    flex-grow: 1;
+    height: 1px;
+    background-color: #dbdbdb;
+    @media screen and (min-width: $tablet-width) {
+      display: block;
+    }
+  }
+  &::before {
+    margin-right: 70px;
+  }
+  &::after {
+    margin-left: 70px;
+  }
+}
+
+.emotions-field-group__textarea {
+  resize: none;
+  width: 100%;
+  display: block;
+  background-color: #f2f2f2;
+  font: inherit;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  border: none;
+  padding: 15px 18px;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  overflow: auto;
+  &.parsley-error {
+    border: 2px solid orange;
+  }
+  &::placeholder {
+    color: black;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: bold;
+    opacity: 1;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid $secondary-blue;
+  }
+}
+
+.emotions-field-group__textarea::-moz-placeholder {
+  color: black;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.emotions-field-group__textarea:-ms-input-placeholder {
+  color: black;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: bold;
+  opacity: 1;
+}

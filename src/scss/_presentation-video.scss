@@ -1,0 +1,84 @@
+.presentation-video {
+  padding-bottom: 38px;
+  &:fullscreen,
+  &:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+  }
+  @media screen and (min-width: $tablet-width) {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 0;
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: $desktop-width) {
+    padding-left: 200px;
+    padding-right: 200px;
+    margin-bottom: 85px;
+  }
+}
+
+.presentation-video__container {
+  width: 100%;
+  padding-bottom: 63%;
+  background-color: $secondary-blue;
+  overflow: hidden;
+  position: relative;
+  video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    cursor: pointer;
+    &:fullscreen,
+    &:-webkit-full-screen {
+      width: 100%;
+      height: 100%;
+    }
+    
+  }
+}
+
+.presentation-video__controls {
+  padding: 0 $mobile-padding;
+  margin-top: -45px;
+  display: none;
+  @media screen and (min-width: $tablet-width) {
+    position: absolute;
+    bottom: 0;
+    left: 60px;
+    right: 60px;
+    z-index: 3000;
+    margin-top: 0;
+    padding: 0;
+  }
+  @media screen and (min-width: $desktop-width) {
+    left: 200px;
+    right: 200px;
+  }
+}
+
+.presentation-video__play-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: all 0.4s;
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: white;
+  }
+  &--hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

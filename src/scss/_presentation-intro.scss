@@ -1,0 +1,27 @@
+.presentation-intro {
+  text-align: center;
+  padding-top: 33px;
+  padding-bottom: 35px;
+  @media screen and (min-width: $tablet-width) {
+    padding-top: 58px;
+  }
+}
+
+.presentation-intro__heading {
+  font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+  @media screen and (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 1.4;
+    margin-bottom: 22px;
+  }
+}
+
+.presentation-intro__text {
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 0 10%;
+}
