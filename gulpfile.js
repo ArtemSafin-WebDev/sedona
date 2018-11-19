@@ -70,11 +70,11 @@ gulp.task("js", function() {
 gulp.task("transpile", function() {
   return gulp
     .src("./build/js/bundle.js")
-    .pipe(
-      babel({
-        presets: ["env"]
-      })
-    )
+    // .pipe(
+    //   babel({
+    //     presets: ["env"]
+    //   })
+    // )
     .pipe(uglify())
     .pipe(rename("bundle.transpiled.js"))
     .pipe(gulp.dest("./build/js"));
