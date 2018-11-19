@@ -16,9 +16,10 @@ const imageminMozJpeg = require("imagemin-mozjpeg");
 const imageminPngquant = require("imagemin-pngquant");
 const browserify = require("browserify");
 const source = require("vinyl-source-stream");
+const buffer = require('vinyl-buffer');
 const uglify = require("gulp-uglify");
-const twig = require('gulp-twig');
-const htmlmin = require('gulp-htmlmin');
+const twig = require("gulp-twig");
+const htmlmin = require("gulp-htmlmin");
 
 // Process SCSS files
 
@@ -46,14 +47,14 @@ gulp.task("html", function() {
     .pipe(server.stream());
 });
 
-
 // Process favicon files
 
-gulp.task('favicon', function() {
-  return gulp.src("src/*.{png,svg,jpeg,jpg,ico,xml,webmanifest,json}")
+gulp.task("favicon", function() {
+  return gulp
+    .src("src/*.{png,svg,jpeg,jpg,ico,xml,webmanifest,json}")
     .pipe(gulp.dest("build"))
     .pipe(server.stream());
-})
+});
 
 // Process JS files
 
@@ -61,23 +62,35 @@ gulp.task("js", function() {
   return browserify("./src/js/app.js")
     .bundle()
     .pipe(source("bundle.js"))
+    .pipe(buffer())
+    .pipe(uglify())
     .pipe(gulp.dest("./build/js"))
     .pipe(server.stream());
 });
 
+// gulp.task("minimize", function() {
+//   return gulp
+//     .src("./build/js/bundle.js")
+//     .pipe(uglify())
+//     .pipe(rename("bundle.min.js"))
+//     .pipe(gulp.dest("./build/js"));
+// });
+
 // Transpile and minimize JS
 
 gulp.task("transpile", function() {
-  return gulp
-    .src("./build/js/bundle.js")
-    // .pipe(
-    //   babel({
-    //     presets: ["env"]
-    //   })
-    // )
-    .pipe(uglify())
-    .pipe(rename("bundle.transpiled.js"))
-    .pipe(gulp.dest("./build/js"));
+  return (
+    gulp
+      .src("./build/js/bundle.js")
+      .pipe(
+        babel({
+          presets: ["env"]
+        })
+      )
+      .pipe(uglify())
+      .pipe(rename("bundle.transpiled.js"))
+      .pipe(gulp.dest("./build/js"))
+  );
 });
 
 // Main task for watching changes
@@ -126,12 +139,12 @@ gulp.task("imagemin", function() {
     .pipe(gulp.dest("src/img"));
 });
 
-
 gulp.task("video", function() {
-  return gulp.src("src/video/**/*.{mp4,webm,ogv}")
-  .pipe(gulp.dest("build/video"))
-  .pipe(server.stream());
-})
+  return gulp
+    .src("src/video/**/*.{mp4,webm,ogv}")
+    .pipe(gulp.dest("build/video"))
+    .pipe(server.stream());
+});
 
 // Run 'gulp compress' to perform compression operation. Result will be in the build folder. Source images are not touched
 
@@ -216,7 +229,17 @@ gulp.task("clean", function() {
 // Runs all tasks synchronously
 
 gulp.task("build", function(done) {
-  run("clean", "fonts", "images", 'favicon', "video", "style", "js", "html", done);
+  run(
+    "clean",
+    "fonts",
+    "images",
+    "favicon",
+    "video",
+    "style",
+    "js",
+    "html",
+    done
+  );
 });
 
 // Does not include image compression, run 'gulp compress' separately
